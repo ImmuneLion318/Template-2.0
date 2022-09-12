@@ -30,6 +30,14 @@ namespace Interface
         private void OnLoad(object sender, RoutedEventArgs e)
         {
             /* Modify Config Json And Post Online Then Reference The Link */
+            string[] Directories = new string[] 
+            { "Workspace", "Scripts", "AutoExec", "Bin" };
+
+            for (int i = 0; i < Directories.Length; ++i)
+                Directory.CreateDirectory(Directories[i]);
+
+            Editor.Options.EnableEmailHyperlinks = false;
+            Editor.Options.EnableHyperlinks = false;
 
             using (var Http = new WebClient { Proxy = null })
             {
@@ -41,9 +49,6 @@ namespace Interface
                 //    /* Version Mismatch */
                 //    Process.GetCurrentProcess().Kill();
                 //}
-
-                Editor.Options.EnableEmailHyperlinks = false;
-                Editor.Options.EnableHyperlinks = false;
 
                 using (var TextReader = new XmlTextReader(Http.OpenRead("https://raw.githubusercontent.com/ImmuneLion318/Editor-Syntax/Entry/Syntax/Dark.xshd")))
                     Editor.SyntaxHighlighting = HighlightingLoader.Load(TextReader, HighlightingManager.Instance);

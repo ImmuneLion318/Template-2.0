@@ -159,12 +159,12 @@
                             </Track>
                         </Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
+                            <!--<Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
                                 <Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb" Property="Background" />
                             </Trigger>
                             <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
                                 <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background" />
-                            </Trigger>
+                            </Trigger>-->
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed" />
                             </Trigger>
@@ -221,9 +221,16 @@
             <Button x:Name="MaximizeBtn" Click="MaximizeBtn_Click" Style="{StaticResource TaskButtonStyle}" Content="&#xe922;" BorderBrush="Transparent" FontFamily="Segoe Fluent Icons" Foreground="Gray" Background="Transparent" Margin="530,0,30,280" />
             <Button x:Name="MinimizeBtn" Click="MinimizeBtn_Click" Style="{StaticResource TaskButtonStyle}" Content="&#xef2d;" BorderBrush="Transparent" FontFamily="Segoe Fluent Icons" Foreground="Gray" Background="Transparent" Margin="500,0,60,280" />
 
+            <!-- /* Interface Buttons */ -->
+            <Button Style="{StaticResource TaskButtonStyle}" Content="&#xe768;" FontFamily="Segoe Fluent Icons" Foreground="Gray" BorderBrush="#1E1D1E" BorderThickness="1" Background="Transparent" Margin="125,5,445,285" />
+            <Button Style="{StaticResource TaskButtonStyle}" Content="&#xe75c;" FontFamily="Segoe Fluent Icons" Foreground="Gray" BorderBrush="#1E1D1E" BorderThickness="1" Background="Transparent" Margin="150,5,420,285" />
+            <Button Style="{StaticResource TaskButtonStyle}" Content="&#xe838;" FontFamily="Segoe Fluent Icons" Foreground="Gray" BorderBrush="#1E1D1E" BorderThickness="1" Background="Transparent" Margin="175,5,395,285" />
+            <Button Style="{StaticResource TaskButtonStyle}" Content="&#xea35;" FontFamily="Segoe Fluent Icons" Foreground="Gray" BorderBrush="#1E1D1E" BorderThickness="1" Background="Transparent" Margin="200,5,370,285" />
+            <Button Style="{StaticResource TaskButtonStyle}" Content="&#xe723;" FontFamily="Segoe Fluent Icons" Foreground="Gray" BorderBrush="#1E1D1E" BorderThickness="1" Background="Transparent" Margin="225,5,345,285" />
+
             <!-- /* Text Editor */ -->
             <AvalonEditor:TextEditor x:Name="Editor" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Background="Transparent" Foreground="#C3C3C3" LineNumbersForeground="Gray" ShowLineNumbers="True" Margin="5,65,5,5" FontFamily="JetBrains Mono" />
-            
+
         </Grid>
 
         <!-- /* Drop Shdaow */ -->
